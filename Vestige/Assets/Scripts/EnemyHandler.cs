@@ -7,7 +7,7 @@ public class EnemyHandler : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 2f;
     public GameObject key;
-    public bool hasKey = false;
+    public bool dropsKey = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class EnemyHandler : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(hasKey)
+        if(dropsKey)
         {
             Instantiate(key,transform.position,key.transform.rotation);
         }
