@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlatformController : MonoBehaviour
 {
+    #region vars
     private Rigidbody2D rb;
     private float horizontalInput;
+    public GameObject yousuckthing;
     public EffectManager em;
     public GameObject CP;
     public LayerMask death;
@@ -20,14 +24,18 @@ public class PlatformController : MonoBehaviour
     public bool canslam = true;
     public float dashspeed = 4f;
     public float jumpSpeed = 8f;
+    public float teleportdistance = 100f;
     public Transform groundCheckPoint; // we really just need to get the position of an object, below the player, to determine where to check for the ground.
     public LayerMask groundLayer;
     private float groundCheckRadius = 0.2f;
     public bool dashing = false;
     public int maxJumps = 2;
     public int numJumps = 0;
+    public LayerMask TutorialLayer;
     public static PlatformController instance;
     public float dashCD = 1f, slamCD = 1f, TPCD = 2f;
+    #endregion
+
 
     private void Awake()
     {
@@ -37,6 +45,14 @@ public class PlatformController : MonoBehaviour
     bool GroundCheck()
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
+    }
+    bool tutcheck()
+    {
+        return Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, TutorialLayer);
+    }
+    bool tpcheck(Vector3 pos)
+    {
+        return Physics2D.OverlapCircle(pos, 0.05f, groundLayer);
     }
     bool deathcheck()
     {
@@ -74,10 +90,18 @@ public class PlatformController : MonoBehaviour
         }
         if (deathcheck())
         {
-            if(tutorial)
+            if (tutorial)
             {
                 transform.position = CP.transform.position;
             }
+            else
+            {
+                SceneManager.LoadScene("Purgatory");
+            }
+        }
+        if (tutcheck())
+        {
+            tutorial = false;
         }
         if (Input.GetKeyDown(KeyCode.Space) && numJumps > 0)
         {
@@ -86,16 +110,19 @@ public class PlatformController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && cantp)
         {
-            
-              Vector3 mouseScreenPosition = Input.mousePosition;
-              Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
-              Vector3 spot = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, transform.position.z);
-           
-              StartCoroutine(tp(spot));
+
+            Vector3 mouseScreenPosition = Input.mousePosition;
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
+            Vector2 place = (gameObject.transform.position - mouseWorldPosition).normalized;
+            float x = place.x * teleportdistance;
+
+            float y = place.y * teleportdistance;
+            Vector2 spot = new Vector2(-x, -y);
+            StartCoroutine(tp(spot));
 
            
         }
-        if (Input.GetKeyDown(KeyCode.Q) && candash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && candash)
         {
             print("1");
             StartCoroutine(ActivateDash());
@@ -159,14 +186,29 @@ public class PlatformController : MonoBehaviour
 
     IEnumerator tp(Vector3 pos)
     {
-        cantp = false;
-        em.CreateTPeffect(pos);
-        yield return new WaitForSeconds(1);
-        gameObject.transform.position = pos;
+        Vector3 place = gameObject.transform.position + pos;
+        if (tpcheck(place) == false)
+        {
+            cantp = false;
+            em.CreateTPeffect(gameObject.transform.position + pos);
+            yield return new WaitForSeconds(1);
+            gameObject.transform.position = place;
 
-        UIManagerPlatformer.instance.startTP = true;
-        yield return new WaitForSeconds(TPCD);
-        cantp = true;
+            UIManagerPlatformer.instance.startTP = true;
+            yield return new WaitForSeconds(TPCD);
+            cantp = true;
+        }
+        else
+        {
+            StartCoroutine(yourbad());
+        }
+    }
+
+    IEnumerator yourbad()
+    {
+        yousuckthing.SetActive(true);
+        yield return new WaitForSeconds(0.5F);
+        yousuckthing.SetActive(false);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
