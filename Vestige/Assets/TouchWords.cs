@@ -11,6 +11,7 @@ public class TouchWords : MonoBehaviour
     public TMP_Text text;
     public GameObject tutorialguy;
     private bool activated = true;
+    private Coroutine oldgoob;
 
     IEnumerator textshow()
     {
@@ -29,9 +30,13 @@ public class TouchWords : MonoBehaviour
         if (collision.gameObject == plr && activated)
         {
             activated = false;
-          
-            StartCoroutine(textshow());
-            
+            if (oldgoob != null)
+            {
+                print("Ended");
+                StopCoroutine(oldgoob);
+            }
+            Coroutine newgoob =  StartCoroutine(textshow());
+            oldgoob = newgoob;
         }
         
     }
