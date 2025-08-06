@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Breakable
+  - endtut
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,15 @@ TagManager:
   - UI
   - Ground
   - Obliteration
+<<<<<<< Updated upstream
   - 
   - Enemy
   - Player
+=======
+  - Tutorial
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
