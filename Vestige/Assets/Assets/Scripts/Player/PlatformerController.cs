@@ -24,9 +24,16 @@ public class PlatformController : MonoBehaviour
     public Transform groundCheckPoint; // we really just need to get the position of an object, below the player, to determine where to check for the ground.
     public LayerMask groundLayer;
     private float groundCheckRadius = 0.2f;
-    private bool dashing = false;
+    public bool dashing = false;
     public int maxJumps = 2;
     public int numJumps = 0;
+    public static PlatformController instance;
+    public float dashCD = 1f, slamCD = 1f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     bool GroundCheck()
     {
@@ -124,14 +131,14 @@ public class PlatformController : MonoBehaviour
 
     IEnumerator ActivateDash()
     {
-     
+        UIManagerPlatformer.instance.startDash = true;
         dashing = true;
         candash = false;
         yield return new WaitForSeconds(0.1f);
       
         dashing = false;
        
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(dashCD);
    
         candash = true;
     }
@@ -145,7 +152,7 @@ public class PlatformController : MonoBehaviour
      
         slamming = false;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(slamCD);
       
         canslam = true;
     }
