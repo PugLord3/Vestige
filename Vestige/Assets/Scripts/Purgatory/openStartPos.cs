@@ -36,7 +36,7 @@ public class openStartPos : MonoBehaviour
             HPSTORE = PlayerController.instance.gameObject.GetComponent<HP>().currentHP;
             PlayerController.instance.gameObject.GetComponent<HP>().currentHP = 9999;
             iframesOn = true;
-            iframe = 0.5f;
+            iframe = 0.25f;
         }
     }
 }

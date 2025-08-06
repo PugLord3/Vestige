@@ -12,13 +12,15 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public bool hasKey = false;
     public RoomHandler currentRoom;
-    public float dashDuration = 0.1f, dashSpeed = 10f, currentDashTime = 0.1f, keepHealth, dashCooldown = 1f, dashCooldownTimer = 1f;
+    public float dashDuration = 0.1f, dashSpeed = 10f, currentDashTime = 0.1f, keepHealth, dashCooldown = 1f, dashCooldownTimer = 1f, slashCooldown = 1f, slashCooldownTimer = 0f;
     public int dashWindup = 50;
     public bool dashOngoing = false;
     private Vector2 dashdir;
+    public GameObject claw, dashHitbox;
 
     void Start()
     {
+        dashHitbox.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         instance = this;
     }
@@ -26,13 +28,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && !dashOngoing && (dashCooldownTimer <= 0f))
+        if(Input.GetKeyDown(KeyCode.Space) && !dashOngoing && (dashCooldownTimer <= 0f))
         {
             Thread.Sleep(dashWindup);
             currentDashTime = dashDuration;
-            keepHealth = GetComponent<HP>().currentHP;
-            GetComponent<HP>().currentHP = 99f;
             dashdir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            Physics2D.IgnoreLayerCollision(10, 9); dashHitbox.SetActive(true);
             dashOngoing = true;
         }//start of dash
         else if (!dashOngoing)
@@ -54,6 +55,19 @@ public class PlayerController : MonoBehaviour
             dashCooldownTimer -= Time.deltaTime;
         }
 
+        //claw
+
+        if(Input.GetMouseButtonDown(0) && slashCooldownTimer <= 0)
+        {
+            Instantiate(claw, transform.position+(Vector3)ClawPos(), Quaternion.Euler(new Vector3(0,0,-ClawRot())));
+            slashCooldownTimer = slashCooldown;
+        }
+
+        if(slashCooldownTimer > 0f)
+        {
+            slashCooldownTimer -= Time.deltaTime;
+        }
+
     }
 
     void Dash()
@@ -65,7 +79,22 @@ public class PlayerController : MonoBehaviour
         {
             dashCooldownTimer = dashCooldown;
             dashOngoing = false;
-            PlayerController.instance.gameObject.GetComponent<HP>().currentHP = keepHealth;
+            Physics2D.IgnoreLayerCollision(10, 9, false); dashHitbox.SetActive(false);
         }
+    }
+
+    Vector2 ClawPos()
+    {
+        Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 ret = mousepos - (Vector2)transform.position;
+        return ret.normalized;
+    }
+
+    float ClawRot()
+    {
+        Vector2 mousepos = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
+
+        Vector2 direction = mousepos - (Vector2)transform.position;
+        return Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
     }
 }

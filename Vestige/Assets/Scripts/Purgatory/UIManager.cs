@@ -7,7 +7,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject key, nokey, allhearts, twohearts, oneheart, nohearts;
-    public Image dashCooldown;
+    public Image dashCooldown, slashCooldown;
     public TMP_Text EnemyCounter;
 
     public VertexGradient normal, oneleft;
@@ -29,12 +29,23 @@ public class UIManager : MonoBehaviour
     
     void handleCooldowns()
     {
+        //dash
         if(PlayerController.instance.dashCooldownTimer > 0)
         {
             dashCooldown.fillAmount = PlayerController.instance.dashCooldownTimer / PlayerController.instance.dashCooldown;
         } else
         {
             dashCooldown.fillAmount = 0;
+        }
+
+        //slash
+        if (PlayerController.instance.slashCooldownTimer > 0)
+        {
+            slashCooldown.fillAmount = PlayerController.instance.slashCooldownTimer / PlayerController.instance.slashCooldown;
+        }
+        else
+        {
+            slashCooldown.fillAmount = 0;
         }
     }
 

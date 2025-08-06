@@ -27,8 +27,8 @@ public class EnemyHandler : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            collision.gameObject.GetComponent<HP>().takeDamage(1f);
+                Destroy(gameObject);
+                collision.gameObject.GetComponent<HP>().takeDamage(1f);
         }
     }
 
