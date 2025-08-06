@@ -9,11 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/PURGATORY_CLAW.unity
+    path: Assets/Scenes/Purgatory.unity
     guid: e1d1912feb0cd0144a11a62bf54b6d86
-=======
-    path: Assets/Scenes/Platfomer Section.unity
-    guid: ffbe1e63f247d9a46872d556f5a93e95
->>>>>>> Stashed changes
   m_configObjects: {}

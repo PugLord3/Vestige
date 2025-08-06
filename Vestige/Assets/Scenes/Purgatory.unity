@@ -830,6 +830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 462921760}
   - component: {fileID: 462921759}
+  - component: {fileID: 462921761}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -884,6 +885,21 @@ Transform:
   - {fileID: 784360987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462921761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462921758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03646c686356e9141bf69477354edf0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+  tuti: {fileID: 866318908}
+  tutt: {fileID: 998216678}
 --- !u!1 &493983883
 GameObject:
   m_ObjectHideFlags: 0
@@ -15912,7 +15928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemyCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
