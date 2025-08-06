@@ -12,7 +12,6 @@ public class PlatformController : MonoBehaviour
     public GameObject CP;
     public LayerMask death;
     public bool tutorial;
-    public float TPCD = 2f;
     public bool candash = true;
     private bool cantp = true;
     public float moveSpeed = 10f;
@@ -28,7 +27,7 @@ public class PlatformController : MonoBehaviour
     public int maxJumps = 2;
     public int numJumps = 0;
     public static PlatformController instance;
-    public float dashCD = 1f, slamCD = 1f;
+    public float dashCD = 1f, slamCD = 1f, TPCD = 2f;
 
     private void Awake()
     {
@@ -111,7 +110,7 @@ public class PlatformController : MonoBehaviour
         {
             Vector3 mouseScreenPosition = Input.mousePosition;
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
-            Vector2 target = gameObject.transform.position - mouseWorldPosition;
+            Vector2 target = (gameObject.transform.position - mouseWorldPosition).normalized;
             float x = target.x * dashspeed;
          
             float y = target.y * dashspeed;
@@ -131,11 +130,11 @@ public class PlatformController : MonoBehaviour
 
     IEnumerator ActivateDash()
     {
-        UIManagerPlatformer.instance.startDash = true;
         dashing = true;
         candash = false;
         yield return new WaitForSeconds(0.1f);
-      
+        UIManagerPlatformer.instance.startDash = true;
+
         dashing = false;
        
         yield return new WaitForSeconds(dashCD);
@@ -149,7 +148,8 @@ public class PlatformController : MonoBehaviour
         slamming = true;
         canslam = false;
         yield return new WaitForSeconds(0.5f);
-     
+        UIManagerPlatformer.instance.startSlam = true;
+
         slamming = false;
 
         yield return new WaitForSeconds(slamCD);
@@ -162,8 +162,10 @@ public class PlatformController : MonoBehaviour
         cantp = false;
         em.CreateTPeffect(pos);
         yield return new WaitForSeconds(1);
-        gameObject.transform.position = pos; 
-        yield return new WaitForSeconds(2);
+        gameObject.transform.position = pos;
+
+        UIManagerPlatformer.instance.startTP = true;
+        yield return new WaitForSeconds(TPCD);
         cantp = true;
     }
 
