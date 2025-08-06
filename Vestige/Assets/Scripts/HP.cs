@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class HP : MonoBehaviour
@@ -23,6 +24,7 @@ public class HP : MonoBehaviour
 
         if(currentHP <= 0)
         {
+            Thread.Sleep(10);
             Destroy(gameObject);
         }
     }

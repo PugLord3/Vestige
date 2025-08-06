@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class PurgatoryHandle : MonoBehaviour
 {
-    private int enemyCount = 0;
+    public int enemyCount = 0;
+    public static PurgatoryHandle instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +23,10 @@ public class PurgatoryHandle : MonoBehaviour
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Count();
 
-        if(enemyCount == 1)
+        if(enemyCount == 1 && !PlayerController.instance.hasKey)
         {
             GameObject keyEnemy = GameObject.FindGameObjectWithTag("Enemy");
-            keyEnemy.gameObject.GetComponent<EnemyHandler>().hasKey = true;
+            keyEnemy.gameObject.GetComponent<EnemyHandler>().dropsKey = true;
         }
     }
 }
