@@ -5,6 +5,8 @@ using UnityEngine;
 public class Claw : MonoBehaviour
 {
     public float duration = 0.10f;
+
+
     // Start is called before the first frame update
     void Start()
     {
