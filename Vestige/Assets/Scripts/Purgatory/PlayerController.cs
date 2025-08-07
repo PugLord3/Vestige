@@ -73,7 +73,13 @@ public class PlayerController : MonoBehaviour
     void Dash()
     {
         currentDashTime -= Time.deltaTime;
-        rb.velocity = dashdir.magnitude > 0 ? dashdir * dashSpeed : new Vector2(dashSpeed, 0);
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
+        Vector2 target = (gameObject.transform.position - mouseWorldPosition).normalized;
+        float x = target.x * 50f;
+
+        float y = target.y * 50f;
+        rb.velocity = new Vector2(-x, -y);
 
         if (currentDashTime <= 0)
         {
@@ -97,4 +103,10 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = mousepos - (Vector2)transform.position;
         return Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("Purgatory");
+    }
 }
+

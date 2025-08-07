@@ -6,7 +6,7 @@ using UnityEngine;
 public class StartPos : MonoBehaviour
 {
     public GameObject endPos;
-    public float iframe, HPSTORE;
+    private float iframe, HPSTORE;
     public bool iframesOn = false;
     // Start is called before the first frame update
     void Start()

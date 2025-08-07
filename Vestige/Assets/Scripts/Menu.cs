@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
         RectTransform rt=gametext.GetComponent<RectTransform>();
         Vector3 origscale=rt.localScale;
         Quaternion origrot=rt.localRotation;
-        Vector2 targetpos=rt.anchoredPosition+new Vector2(0,300);
+        Vector2 targetpos=rt.anchoredPosition+new Vector2(0,250);
         rt.localScale=Vector3.zero;
         StartCoroutine(anim(rt,origscale,origrot,targetpos));
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2271721520907640142}
   - component: {fileID: 9045664151550919590}
   - component: {fileID: 7886520065506677620}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Bat 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHP: 0
-  maxHP: 1
+  maxHP: 2
 --- !u!50 &2271721520907640142
 Rigidbody2D:
   serializedVersion: 4
@@ -193,5 +193,5 @@ MonoBehaviour:
   speed: 2
   key: {fileID: 3550094598487823862, guid: 3d30994bd7e25e74a8abc1881d662cda, type: 3}
   dropsKey: 0
-  shotspeed: 2
+  shotspeed: 5
   bullet: {fileID: 5846629656947425906, guid: e42014d3d97134d488825389441f3e3b, type: 3}

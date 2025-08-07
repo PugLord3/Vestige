@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public class PurgatoryHandle : MonoBehaviour
@@ -26,7 +27,14 @@ public class PurgatoryHandle : MonoBehaviour
         if(enemyCount == 1 && !PlayerController.instance.hasKey)
         {
             GameObject keyEnemy = GameObject.FindGameObjectWithTag("Enemy");
-            keyEnemy.gameObject.GetComponent<EnemyHandler>().dropsKey = true;
+           
+        }
+        
+        if(enemyCount == 0)
+        {
+            PlayerController.instance.hasKey = true;
         }
     }
+
+    
 }
