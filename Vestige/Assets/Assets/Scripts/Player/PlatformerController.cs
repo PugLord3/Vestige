@@ -13,7 +13,7 @@ public class PlatformController : MonoBehaviour
     private float horizontalInput;
     public GameObject yousuckthing;
     public EffectManager em;
-    public GameObject CP;
+    public GameObject currentCP;
     public LayerMask death;
     public bool tutorial;
     public bool candash = true;
@@ -31,6 +31,7 @@ public class PlatformController : MonoBehaviour
     public bool dashing = false;
     public int maxJumps = 2;
     public int numJumps = 0;
+    public int CheckPoint = 0;
     public LayerMask TutorialLayer;
     public static PlatformController instance;
     public float dashCD = 1f, slamCD = 1f, TPCD = 2f;
@@ -40,6 +41,8 @@ public class PlatformController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        currentCP = GameManager.instance.CurrentCheckPOINT;
+        print(currentCP.name);
     }
 
     bool GroundCheck()
@@ -63,6 +66,7 @@ public class PlatformController : MonoBehaviour
     {
         //because we are using physics, we need the rigidbody
         rb = GetComponent<Rigidbody2D>();
+        transform.position = currentCP.transform.position;
       
     }
     void Update()
@@ -92,7 +96,8 @@ public class PlatformController : MonoBehaviour
         {
             if (tutorial)
             {
-                transform.position = CP.transform.position;
+                transform.position = currentCP.transform.position;
+                print(currentCP.name + " Teleported");
             }
             else
             {
