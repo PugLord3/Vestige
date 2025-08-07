@@ -6,7 +6,7 @@ using UnityEngine;
 public class RoomHandler : MonoBehaviour
 {
     public Vector2[] points;
-    public GameObject enemyPrefab;
+    public List<GameObject> enemies = new List<GameObject>();
     public int enemyCount = 5;
     private PolygonCollider2D polygonCollider;
     // Start is called before the first frame update
@@ -45,7 +45,8 @@ public class RoomHandler : MonoBehaviour
                 {
                     randomPos = new Vector2(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y));
                 }
-
+                GameObject enemyPrefab = enemies[Random.Range(0, enemies.Count)];
+                print(enemies.Count);
                 Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
 
                 enemyCount--;

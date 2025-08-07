@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float speed = 2f;
     public GameObject key;
     public bool dropsKey = false;

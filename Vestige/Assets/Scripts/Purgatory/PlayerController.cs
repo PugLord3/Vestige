@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 dashdir;
     public GameObject claw, dashHitbox;
 
-    void Start()
+    void Start()    
     {
         dashHitbox.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
