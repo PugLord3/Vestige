@@ -23,14 +23,7 @@ public class EnemyHandler : MonoBehaviour
         rb.velocity = dir * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-                Destroy(gameObject);
-                collision.gameObject.GetComponent<HP>().takeDamage(1f);
-        }
-    }
+
 
     private void OnDestroy()
     {
