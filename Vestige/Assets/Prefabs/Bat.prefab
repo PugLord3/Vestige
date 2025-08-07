@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6442899743119801684}
   - component: {fileID: 2271721520907640142}
   - component: {fileID: 9045664151550919590}
+  - component: {fileID: -7361437742085717109}
   m_Layer: 9
   m_Name: Bat
   m_TagString: Enemy
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd518790e39d1974e904edd6c097c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   speed: 3
   key: {fileID: 3550094598487823862, guid: 3d30994bd7e25e74a8abc1881d662cda, type: 3}
   dropsKey: 0
@@ -173,7 +175,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -192,3 +194,15 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &-7361437742085717109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284990766356629339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a0653d1c2afe14b877b9f44d25619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

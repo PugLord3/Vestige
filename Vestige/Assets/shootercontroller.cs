@@ -40,14 +40,6 @@ public class shooterhandler : EnemyHandler
         }
     }
 
-    private void OnDestroy()
-    {
-        if (dropsKey)
-        {
-            Instantiate(key, transform.position, key.transform.rotation);
-        }
-    }
-
     IEnumerator killit(GameObject item)
     {
         yield return new WaitForSeconds(4);

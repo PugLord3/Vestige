@@ -23,13 +23,4 @@ public class EnemyHandler : MonoBehaviour
         rb.velocity = dir * speed;
     }
 
-
-
-    private void OnDestroy()
-    {
-        if(dropsKey)
-        {
-            Instantiate(key,transform.position,key.transform.rotation);
-        }
-    }
 }
