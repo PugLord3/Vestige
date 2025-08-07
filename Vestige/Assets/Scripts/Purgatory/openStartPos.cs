@@ -7,7 +7,7 @@ using UnityEngine;
 public class openStartPos : MonoBehaviour
 {
     public GameObject endPos;
-    public float iframe, HPSTORE = 3f;
+    private float iframe, HPSTORE = 3f;
     public bool iframesOn = false;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class openStartPos : MonoBehaviour
             HPSTORE = PlayerController.instance.gameObject.GetComponent<HP>().currentHP;
             PlayerController.instance.gameObject.GetComponent<HP>().currentHP = 9999;
             iframesOn = true;
-            iframe = 0.25f;
+            iframe = 0.5f;
         }
     }
 }

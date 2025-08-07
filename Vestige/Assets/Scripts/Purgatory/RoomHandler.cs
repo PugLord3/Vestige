@@ -9,6 +9,7 @@ public class RoomHandler : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public int enemyCount = 5;
     private PolygonCollider2D polygonCollider;
+
     // Start is called before the first frame update
     void Start()
     {
