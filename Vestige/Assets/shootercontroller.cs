@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class shooterhandler : EnemyHandler
 {
-    public float shotspeed = 2f;
+    public float shotFireRate = 2f;
     public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        speed = 0f;
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class shooterhandler : EnemyHandler
     void Update()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 1f)
+        if (timePassed > shotFireRate)
         {
             if (PlayerController.instance == null) return;
             Vector2 dir = (PlayerController.instance.transform.position - transform.position).normalized;

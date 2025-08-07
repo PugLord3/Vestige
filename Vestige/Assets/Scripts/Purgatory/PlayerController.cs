@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             Thread.Sleep(dashWindup);
             currentDashTime = dashDuration;
             dashdir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            Physics2D.IgnoreLayerCollision(10, 9); dashHitbox.SetActive(true);
+            Physics2D.IgnoreLayerCollision(9, 8); dashHitbox.SetActive(true); print("Dashed!");
             dashOngoing = true;
         }//start of dash
         else if (!dashOngoing)
@@ -76,19 +76,13 @@ public class PlayerController : MonoBehaviour
     void Dash()
     {
         currentDashTime -= Time.deltaTime;
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
-        Vector2 target = (gameObject.transform.position - mouseWorldPosition).normalized;
-        float x = target.x * 50f;
-
-        float y = target.y * 50f;
-        rb.velocity = new Vector2(-x, -y);
+        rb.velocity = dashdir * dashSpeed;
 
         if (currentDashTime <= 0)
         {
             dashCooldownTimer = dashCooldown;
             dashOngoing = false;
-            Physics2D.IgnoreLayerCollision(10, 9, false); dashHitbox.SetActive(false);
+            Physics2D.IgnoreLayerCollision(9, 8 , false); dashHitbox.SetActive(false);
         }
     }
 

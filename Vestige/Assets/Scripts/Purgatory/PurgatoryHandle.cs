@@ -24,15 +24,14 @@ public class PurgatoryHandle : MonoBehaviour
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Count();
 
-        if(enemyCount == 1 && !PlayerController.instance.hasKey)
-        {
-            GameObject keyEnemy = GameObject.FindGameObjectWithTag("Enemy");
-           
-        }
-        
+   
         if(enemyCount == 0)
         {
             PlayerController.instance.hasKey = true;
+        }
+        else
+        {
+            PlayerController.instance.hasKey = false;
         }
     }
 
