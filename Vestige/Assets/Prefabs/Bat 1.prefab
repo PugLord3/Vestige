@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5165760818460454250}
   - component: {fileID: 2267008742197107749}
   - component: {fileID: 2271721520907640142}
-  - component: {fileID: 9045664151550919590}
   - component: {fileID: 7886520065506677620}
+  - component: {fileID: -2835130027406354065}
   m_Layer: 8
   m_Name: Bat 1
   m_TagString: Enemy
@@ -129,8 +129,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &9045664151550919590
-PolygonCollider2D:
+--- !u!114 &7886520065506677620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284990766356629339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bd76188ffcc4a4499863b89897f26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 2
+  key: {fileID: 3550094598487823862, guid: 3d30994bd7e25e74a8abc1881d662cda, type: 3}
+  dropsKey: 0
+  shotFireRate: 2
+  bullet: {fileID: 5846629656947425906, guid: e42014d3d97134d488825389441f3e3b, type: 3}
+--- !u!58 &-2835130027406354065
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,36 +180,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
---- !u!114 &7886520065506677620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5284990766356629339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bd76188ffcc4a4499863b89897f26f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 2
-  key: {fileID: 3550094598487823862, guid: 3d30994bd7e25e74a8abc1881d662cda, type: 3}
-  dropsKey: 0
-  shotspeed: 5
-  bullet: {fileID: 5846629656947425906, guid: e42014d3d97134d488825389441f3e3b, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.1
