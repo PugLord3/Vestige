@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float speed = 2f;
     public GameObject key;
     public bool dropsKey = false;
@@ -23,14 +23,7 @@ public class EnemyHandler : MonoBehaviour
         rb.velocity = dir * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-                Destroy(gameObject);
-                collision.gameObject.GetComponent<HP>().takeDamage(1f);
-        }
-    }
+
 
     private void OnDestroy()
     {

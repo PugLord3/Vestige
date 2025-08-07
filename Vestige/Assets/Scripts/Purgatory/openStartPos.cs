@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor.Experimental.RestService;
 using UnityEngine;
 
 public class openStartPos : MonoBehaviour
@@ -30,7 +31,7 @@ public class openStartPos : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !PlayerController.instance.hasKey)
         {
             collision.transform.position = endPos.transform.position;
             HPSTORE = PlayerController.instance.gameObject.GetComponent<HP>().currentHP;
