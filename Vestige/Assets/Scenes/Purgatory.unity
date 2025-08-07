@@ -481,6 +481,10 @@ PrefabInstance:
       value: -4.43
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
+      propertyPath: enemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -494,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room (3)
+      value: Room5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1821,7 +1825,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2240,7 +2244,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room (5)
+      value: Room7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3187,6 +3191,10 @@ PrefabInstance:
       value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
+      propertyPath: enemyCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3200,7 +3208,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room (2)
+      value: Room4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3529,6 +3537,10 @@ PrefabInstance:
       value: -11.58
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
+      propertyPath: enemyCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3542,7 +3554,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room (4)
+      value: Room6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3786,6 +3798,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552325484}
   m_CullTransparentMesh: 1
+--- !u!1 &1574761780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574761782}
+  - component: {fileID: 1574761781}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1574761781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574761780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 0}
+--- !u!4 &1574761782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574761780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.420726, y: -7.48691, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596927849
 GameObject:
   m_ObjectHideFlags: 0
@@ -67783,6 +67844,10 @@ PrefabInstance:
       value: 22.32
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
+      propertyPath: enemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -67796,7 +67861,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room (1)
+      value: Room2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -72616,7 +72681,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room
+      value: Room1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72680,6 +72745,10 @@ PrefabInstance:
       value: -4.55
       objectReference: {fileID: 0}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
+      propertyPath: enemyCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -72693,7 +72762,7 @@ PrefabInstance:
       objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
-      value: Room
+      value: Room3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -72863,3 +72932,4 @@ SceneRoots:
   - {fileID: 1289215077}
   - {fileID: 1055799019}
   - {fileID: 1551640685}
+  - {fileID: 1574761782}
