@@ -1721,7 +1721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14631429f25425a44a0b4964247124aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texttodisplay: You cant always jump to location, press q to dash towards your mouse.
+  texttodisplay: You cant always jump to location, press shift to dash towards your
+    mouse.
   time: 5
   plr: {fileID: 1374528079}
   text: {fileID: 1697523909}
@@ -2177,7 +2178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14631429f25425a44a0b4964247124aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texttodisplay: The planks off that ledge are weak. Press e midair to downslam and
+  texttodisplay: The planks off that ledge are weak. Press E midair to downslam and
     break through them.
   time: 6
   plr: {fileID: 1374528079}
@@ -25689,8 +25690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14631429f25425a44a0b4964247124aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texttodisplay: Sometimes you cant get past normally. Click to "Evaporate" and teleport
-    to your cursor.
+  texttodisplay: Sometimes you can't get past normally. Click to "Evaporate" and
+    teleport to your cursor.
   time: 6
   plr: {fileID: 1374528079}
   text: {fileID: 1697523909}
