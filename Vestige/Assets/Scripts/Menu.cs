@@ -8,15 +8,15 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        RectTransform rt=gametext.GetComponent<RectTransform>();
+        Transform rt = gametext.transform;
         Vector3 origscale=rt.localScale;
         Quaternion origrot=rt.localRotation;
-        Vector2 targetpos=rt.anchoredPosition+new Vector2(0,100);
+        Vector2 targetpos = rt.position + new Vector3(0,2, 0);
         rt.localScale=Vector3.zero;
         StartCoroutine(anim(rt,origscale,origrot,targetpos));
     }
 
-    IEnumerator anim(RectTransform rt,Vector3 origscale,Quaternion origrot,Vector2 targetpos)
+    IEnumerator anim(Transform rt,Vector3 origscale,Quaternion origrot,Vector2 targetpos)
     {
         float t=0;
         while(t<2f)
@@ -30,12 +30,12 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         t=0;
-        Vector2 startpos=rt.anchoredPosition;
-        while(t<1.5f)
+        Vector2 startpos=rt.position;
+        while(t<1.5f)   
         {
             t+=Time.deltaTime;
             float p=Mathf.SmoothStep(0,1,t/1.5f);
-            rt.anchoredPosition=Vector2.Lerp(startpos,targetpos,p);
+            rt.position=Vector2.Lerp(startpos,targetpos,p);
             yield return null;
         }
 
@@ -44,7 +44,7 @@ public class Menu : MonoBehaviour
         StartCoroutine(pulse(rt,origscale,origrot));
     }
 
-    IEnumerator pulse(RectTransform rt,Vector3 origscale,Quaternion origrot)
+    IEnumerator pulse(Transform rt,Vector3 origscale,Quaternion origrot)
     {
         float ramp=0;
         while(true)
