@@ -35,7 +35,8 @@ public class PlayerController : MonoBehaviour
             Thread.Sleep(dashWindup);
             currentDashTime = dashDuration;
             dashdir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            Physics2D.IgnoreLayerCollision(9, 8); dashHitbox.SetActive(true); print("Dashed!");
+            Physics2D.IgnoreLayerCollision(9, 8); dashHitbox.SetActive(true);
+            PurgatoryAudioManager.instance.playSFX(PurgatoryAudioManager.instance.dash); print("PlayedSound");
             dashOngoing = true;
         }//start of dash
         else if (!dashOngoing)
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(claw, transform.position+(Vector3)ClawPos(), Quaternion.Euler(new Vector3(0,0,-ClawRot())));
             slashCooldownTimer = slashCooldown;
-            SliceSound.Play();
+            PurgatoryAudioManager.instance.playSFX(PurgatoryAudioManager.instance.slash);
         }
 
         if(slashCooldownTimer > 0f)

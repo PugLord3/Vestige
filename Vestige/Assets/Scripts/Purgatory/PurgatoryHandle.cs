@@ -8,6 +8,7 @@ public class PurgatoryHandle : MonoBehaviour
 {
     public int enemyCount = 0;
     public static PurgatoryHandle instance;
+    public bool playKeySound;
 
     private void Awake()
     {
@@ -27,11 +28,18 @@ public class PurgatoryHandle : MonoBehaviour
    
         if(enemyCount == 0)
         {
+            if(playKeySound)
+            {
+                PurgatoryAudioManager.instance.playSFX(PurgatoryAudioManager.instance.key);
+                playKeySound = false;
+            }
+
             PlayerController.instance.hasKey = true;
         }
         else
         {
             PlayerController.instance.hasKey = false;
+            playKeySound = true;
         }
     }
 
