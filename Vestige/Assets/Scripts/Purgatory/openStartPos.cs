@@ -31,7 +31,7 @@ public class openStartPos : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !PlayerController.instance.hasKey)
+        if (collision.CompareTag("Player"))
         {
             collision.transform.position = endPos.transform.position;
             HPSTORE = PlayerController.instance.gameObject.GetComponent<HP>().currentHP;
