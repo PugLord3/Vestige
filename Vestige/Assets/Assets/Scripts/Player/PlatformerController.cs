@@ -110,12 +110,12 @@ public class PlatformController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && numJumps > 0)
         {
+            PlatformerAudioManager.instance.playSFX(PlatformerAudioManager.instance.jump);
             nextVelocityY = jumpSpeed;
             numJumps -= 1;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && cantp)
         {
-
             Vector3 mouseScreenPosition = Input.mousePosition;
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
             Vector2 place = (gameObject.transform.position - mouseWorldPosition).normalized;
@@ -130,6 +130,7 @@ public class PlatformController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && candash)
         {
             print("1");
+            PlatformerAudioManager.instance.playSFX(PlatformerAudioManager.instance.dash);
             StartCoroutine(ActivateDash());
         }
         if (Input.GetKeyDown(KeyCode.E) && canslam)
@@ -200,6 +201,7 @@ public class PlatformController : MonoBehaviour
             gameObject.transform.position = place;
 
             UIManagerPlatformer.instance.startTP = true;
+            PlatformerAudioManager.instance.playSFX(PlatformerAudioManager.instance.tp);
             yield return new WaitForSeconds(TPCD);
             cantp = true;
         }
