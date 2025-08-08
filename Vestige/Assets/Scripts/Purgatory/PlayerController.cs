@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 dashdir;
     public GameObject claw, dashHitbox;
 
+    public AudioSource SliceSound;
+
     void Start()    
     {
         dashHitbox.SetActive(false);
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(claw, transform.position+(Vector3)ClawPos(), Quaternion.Euler(new Vector3(0,0,-ClawRot())));
             slashCooldownTimer = slashCooldown;
+            SliceSound.Play();
         }
 
         if(slashCooldownTimer > 0f)
