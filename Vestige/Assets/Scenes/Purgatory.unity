@@ -636,11 +636,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room5
@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 381986751}
   - component: {fileID: 381986750}
   - component: {fileID: 381986752}
+  - component: {fileID: 381986753}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -853,7 +854,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.45, y: 1.36, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1616105596}
@@ -919,9 +920,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010844993, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.13126889
 --- !u!50 &381986751
 Rigidbody2D:
   serializedVersion: 4
@@ -948,7 +949,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &381986752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +964,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 0
   maxHP: 3
+--- !u!95 &381986753
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381986745}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 799cc8c142c6add4f8d52cf56bd6327e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &403140657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,11 +2662,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room7
@@ -3604,11 +3626,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room4
@@ -3950,11 +3972,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room6
@@ -68257,11 +68279,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room2
@@ -73077,11 +73099,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room1
@@ -73158,11 +73180,11 @@ PrefabInstance:
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 488377953db818a40b72ce9fbf9b5d9e, type: 3}
+      objectReference: {fileID: 2282366551072318519, guid: 0ddf99928f58630428d4803afa8400e2, type: 3}
     - target: {fileID: 7497808285060325102, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5284990766356629339, guid: 7f90267a1fc6a07409be4be8b32c7035, type: 3}
+      objectReference: {fileID: 6847863915049012468, guid: 2fa14003bae30774da979302f8e16dbc, type: 3}
     - target: {fileID: 8630808876702089009, guid: 418b6d4f27e694444811c19eaba8bb4a, type: 3}
       propertyPath: m_Name
       value: Room3
