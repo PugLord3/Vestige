@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   distance:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.1
   cropToFit:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
 --- !u!114 &-2291252346615300570
 MonoBehaviour:
