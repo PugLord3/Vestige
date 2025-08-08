@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public GameObject gametext;
@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
         RectTransform rt=gametext.GetComponent<RectTransform>();
         Vector3 origscale=rt.localScale;
         Quaternion origrot=rt.localRotation;
-        Vector2 targetpos=rt.anchoredPosition+new Vector2(0,250);
+        Vector2 targetpos=rt.anchoredPosition+new Vector2(0,100);
         rt.localScale=Vector3.zero;
         StartCoroutine(anim(rt,origscale,origrot,targetpos));
     }
@@ -56,5 +56,9 @@ public class Menu : MonoBehaviour
             rt.localRotation=origrot*Quaternion.Euler(0,0,r);
             yield return null;
         }
+    }
+    public void OnButtonPress()
+    {
+        SceneManager.LoadScene("Platfomer");
     }
 }
