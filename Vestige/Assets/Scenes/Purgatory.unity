@@ -741,6 +741,7 @@ MonoBehaviour:
   dashOngoing: 0
   claw: {fileID: 7343926218522739240, guid: 39270123b2f5c694fb14d7f5f4c21280, type: 3}
   dashHitbox: {fileID: 1616105595}
+  SliceSound: {fileID: 0}
 --- !u!58 &381986750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3831,7 +3832,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 6857e7ec89af1a4408cb54f603d8930d, type: 2}
 --- !u!4 &1574761782
 Transform:
   m_ObjectHideFlags: 0
